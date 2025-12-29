@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Cpu, Zap, TrendingUp, Star } from "lucide-react";
 import { getBlogPostsByCategory, type BlogPost } from "@/lib/static-data";
 import { AdSlot } from "@/components/common/ad-slot";
+import AdUnit from "@/components/common/AdUnit";
 
 export default function HardwareReviews() {
   const [filter, setFilter] = useState<string>("all");
@@ -144,7 +145,7 @@ export default function HardwareReviews() {
 
         {/* Google AdSense Ad Slot - After Reviews Grid */}
         <div className="my-12 flex justify-center">
-          <AdSlot label="Banner Ad - After Reviews" />
+          <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
         </div>
       </main>
     </>

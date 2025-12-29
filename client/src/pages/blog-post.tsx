@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Clock, User, ArrowLeft, Share } from "lucide-react";
 import { getBlogPost, getAllBlogPosts, type BlogPost } from "@/lib/static-data";
 import { AdSlot } from "@/components/common/ad-slot";
+import AdUnit from "@/components/common/AdUnit";
 
 export default function BlogPost() {
   const params = useParams();
@@ -175,7 +176,7 @@ export default function BlogPost() {
 
         {/* Ads must load after primary content */}
         <div className="max-w-4xl mx-auto mt-16">
-          <AdSlot label="Responsive ad slot (placed after the article content)" />
+          <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
         </div>
       </main>
     </>

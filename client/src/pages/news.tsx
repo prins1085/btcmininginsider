@@ -9,6 +9,7 @@ import { getBlogPostsByCategory, type BlogPost } from "@/lib/static-data";
 import { useCryptoNews } from "@/hooks/use-crypto-news";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AdSlot } from "@/components/common/ad-slot";
+import AdUnit from "@/components/common/AdUnit";
 
 export default function News() {
   const [timeFilter, setTimeFilter] = useState<string>("all");
@@ -173,7 +174,7 @@ export default function News() {
               )}
               {!isLiveLoading && !liveError && liveNews?.length ? (
                 <ul className="space-y-3">
-                  {liveNews.slice(0, 10).map((item) => (
+                  {liveNews.slice(0, 10).map((item: any) => (
                     <li key={item.id} className="text-sm">
                       <a
                         href={item.url}
@@ -197,7 +198,7 @@ export default function News() {
 
         {/* Ads must load after primary content */}
         <div className="mt-12">
-          <AdSlot label="Responsive ad slot (placed after news content)" />
+          <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
         </div>
       </main>
     </>

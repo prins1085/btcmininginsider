@@ -19,6 +19,7 @@ import {
   type BlogPost,
 } from "@/lib/static-data";
 import React from "react";
+import AdUnit from "@/components/common/AdUnit";
 
 export default function Home() {
   const params = useParams();
@@ -131,7 +132,7 @@ export default function Home() {
 
         {/* Google AdSense Ad Slot - After Featured Article */}
         <div className="my-12 flex justify-center">
-          <AdSlot label="Banner Ad - After Featured Content" />
+          <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
         </div>
 
         {/* Blog Grid */}
@@ -183,7 +184,7 @@ export default function Home() {
 
         {/* Google AdSense Ad Slot - After Blog Grid */}
         <div className="my-12 flex justify-center">
-          <AdSlot label="Banner Ad - After Blog Grid" />
+          <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
         </div>
 
         {/* Load More Button */}
@@ -204,7 +205,7 @@ export default function Home() {
 
         {/* Google AdSense Ad Slot - After Newsletter */}
         <div className="my-12 flex justify-center">
-          <AdSlot label="Banner Ad - After Newsletter" />
+          <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
         </div>
 
         {/* Trending Articles */}

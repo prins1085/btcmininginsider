@@ -1,12 +1,18 @@
-// components/AdUnit.js
 import { useEffect } from "react";
 
-export default function AdUnit({ client, slot }) {
+interface AdUnitProps {
+  client: string;
+  slot: string;
+}
+
+export default function AdUnit({ client, slot }: AdUnitProps) {
   useEffect(() => {
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      // Request a new ad
+      (window as any).adsbygoogle = (window as any).adsbygoogle || [];
+      (window as any).adsbygoogle.push({});
     } catch (e) {
-      // ignore when ad can't load
+      // ignore errors during build/runtime
     }
   }, []);
 
