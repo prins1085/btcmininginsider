@@ -8,6 +8,7 @@ import { BookOpen, Users, Clock, Star } from "lucide-react";
 import { getBlogPostsByCategory, type BlogPost } from "@/lib/static-data";
 import { AdSlot } from "@/components/common/ad-slot";
 import AdUnit from "@/components/common/AdUnit";
+import AdsterraNative from "@/components/common/AdsterraNative";
 
 export default function MiningGuides() {
   const [filter, setFilter] = useState<string>("all");
@@ -146,6 +147,7 @@ export default function MiningGuides() {
         {/* Google AdSense Ad Slot - After Guides Grid */}
         <div className="my-12 flex justify-center">
           <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
+          <AdsterraNative />
         </div>
       </main>
     </>

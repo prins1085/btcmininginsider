@@ -16,6 +16,7 @@ import { Calculator, TrendingUp, Zap, DollarSign, Bitcoin } from "lucide-react";
 import { useBitcoinPrice } from "@/hooks/use-bitcoin-price";
 import { AdSlot } from "@/components/common/ad-slot";
 import AdUnit from "@/components/common/AdUnit";
+import AdsterraNative from "@/components/common/AdsterraNative";
 
 interface CalculatorInputs {
   hashrate: string;
@@ -426,6 +427,7 @@ export default function MiningCalculator() {
         {/* Google AdSense Ad Slot - After Calculator Content */}
         <div className="my-12 flex justify-center">
           <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
+          <AdsterraNative />
         </div>
       </main>
     </>

@@ -20,6 +20,7 @@ import {
 } from "@/lib/static-data";
 import React from "react";
 import AdUnit from "@/components/common/AdUnit";
+import AdsterraNative from "@/components/common/AdsterraNative";
 
 export default function Home() {
   const params = useParams();
@@ -133,6 +134,7 @@ export default function Home() {
         {/* Google AdSense Ad Slot - After Featured Article */}
         <div className="my-12 flex justify-center">
           <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
+          <AdsterraNative />
         </div>
 
         {/* Blog Grid */}
@@ -185,6 +187,7 @@ export default function Home() {
         {/* Google AdSense Ad Slot - After Blog Grid */}
         <div className="my-12 flex justify-center">
           <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
+          <AdsterraNative />
         </div>
 
         {/* Load More Button */}
@@ -206,6 +209,7 @@ export default function Home() {
         {/* Google AdSense Ad Slot - After Newsletter */}
         <div className="my-12 flex justify-center">
           <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
+          <AdsterraNative />
         </div>
 
         {/* Trending Articles */}

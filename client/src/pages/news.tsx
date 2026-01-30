@@ -10,6 +10,7 @@ import { useCryptoNews } from "@/hooks/use-crypto-news";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AdSlot } from "@/components/common/ad-slot";
 import AdUnit from "@/components/common/AdUnit";
+import AdsterraNative from "@/components/common/AdsterraNative";
 
 export default function News() {
   const [timeFilter, setTimeFilter] = useState<string>("all");
@@ -199,6 +200,7 @@ export default function News() {
         {/* Ads must load after primary content */}
         <div className="mt-12">
           <AdUnit client="ca-pub-7632399404847430" slot="5287633032" />
+          <AdsterraNative />
         </div>
       </main>
     </>
