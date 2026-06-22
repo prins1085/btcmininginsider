@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/hooks/use-theme";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ScrollToTop } from "@/components/common/scroll-to-top";
+import NotificationSetup from "@/components/NotificationSetup";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import BlogPost from "@/pages/blog-post";
@@ -63,6 +64,7 @@ function App() {
       <ThemeProvider>
         <TooltipProvider>
           <Toaster />
+          <NotificationSetup />
           <Router />
         </TooltipProvider>
       </ThemeProvider>
