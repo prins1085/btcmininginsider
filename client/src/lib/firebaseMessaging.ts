@@ -7,7 +7,7 @@ import {
   onMessage,
   Unsubscribe,
 } from "firebase/messaging";
-import { FIREBASE_VAPID_KEY, getFirebaseApp } from "./firebase";
+import { FIREBASE_VAPID_KEY, firebaseConfig, getFirebaseApp } from "./firebase";
 
 export const FCM_TOKEN_STORAGE_KEY = "fcm_token";
 export const FCM_SERVICE_WORKER_PATH = "/firebase-messaging-sw.js";
@@ -15,6 +15,19 @@ export const FCM_SERVICE_WORKER_PATH = "/firebase-messaging-sw.js";
 let messagingPromise: Promise<Messaging | null> | null = null;
 
 const isClient = () => typeof window !== "undefined";
+
+const getServiceWorkerUrl = (): string => {
+  const params = new URLSearchParams({
+    apiKey: firebaseConfig.apiKey ?? "",
+    authDomain: firebaseConfig.authDomain ?? "",
+    projectId: firebaseConfig.projectId ?? "",
+    storageBucket: firebaseConfig.storageBucket ?? "",
+    messagingSenderId: firebaseConfig.messagingSenderId ?? "",
+    appId: firebaseConfig.appId ?? "",
+  });
+
+  return `${FCM_SERVICE_WORKER_PATH}?${params.toString()}`;
+};
 
 export const getStoredFcmToken = (): string | null => {
   if (!isClient()) {
@@ -59,7 +72,7 @@ export const registerMessagingServiceWorker =
 
     try {
       const registration = await navigator.serviceWorker.register(
-        FCM_SERVICE_WORKER_PATH,
+        getServiceWorkerUrl(),
       );
 
       await navigator.serviceWorker.ready;
@@ -136,6 +149,10 @@ export const getOrCreateFcmToken = async (): Promise<string | null> => {
   }
 
   try {
+    if (!FIREBASE_VAPID_KEY) {
+      throw new Error("Missing Firebase VAPID key.");
+    }
+
     // Token generation binds this browser instance to FCM using the configured
     // VAPID key and the registered service worker used for web push delivery.
     const nextToken = await getToken(messaging, {
